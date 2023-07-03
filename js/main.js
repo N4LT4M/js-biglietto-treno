@@ -6,11 +6,13 @@ va applicato uno sconto del 40% per gli over 65.
 L'output del prezzo finale va messo fuori in forma umana (con massimo due decimali, per indicare centesimi sul prezzo e questo richiederà un minimo di ricerca.).
 Il risultato andrà visualizzato prima in console e poi possibilmente in un apposito elemento <p> del mio codice HTML.*/
 
-
+function submitForm(event) {
+    event.preventDefsult();
+}
 //chiedere all'utente km che vuole percorrere ed età
-
-let km = parseInt(prompt("quanti chilometri devi percorrere?"));
-let age = parseInt(prompt("quanti anni hai?"));
+let nameandsurname = document.getElementById("nameandsurname").value;
+let km = parseInt(document.getElementById("km").value);
+let age = parseInt(document.getElementById("age").value);
 
 //impostare la formula per il calcolo base del biglietto e per gli sconti basati sull'età
 let ticketprice = (km * 0.21);
@@ -23,8 +25,8 @@ if (age >= 65) {
 
 ticketprice = ticketprice.toFixed(2);
 
-
+//stampa risultato in console
 console.log(ticketprice);
 
-
+//stampa risultato in html
 document.getElementById("ticketprice").innerHTML = ticketprice;
