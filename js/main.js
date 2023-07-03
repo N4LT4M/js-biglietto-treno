@@ -15,12 +15,16 @@ let age = parseInt(prompt("quanti anni hai?"));
 //impostare la formula per il calcolo base del biglietto e per gli sconti basati sull'età
 let ticketprice = (km * 0.21);
 
-
 if (age >= 65) {
-    ticketprice - ((ticketprice / 100) * 40)
-} else (age < 18) {
-    ticketprice - ((ticketprice / 100) * 20)
+    ticketprice = ticketprice - ((ticketprice / 100) * 40)
+} else if (age < 18) {
+    ticketprice = ticketprice - ((ticketprice / 100) * 20)
 };
 
+ticketprice = ticketprice.toFixed(2);
 
 
+console.log(ticketprice);
+
+
+document.getElementById("ticketprice").innerHTML = ticketprice;
